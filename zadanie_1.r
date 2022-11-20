@@ -26,8 +26,7 @@ oze$OZE <- oze$Wiatr + oze$PV
 oze$wiatr_percent= 100*(oze$Wiatr/oze$Zapotrzebowanie)
 oze$wiatr_pv= 100*(oze$PV/oze$Zapotrzebowanie)
 
-#PLOT 1
-#------
+
 oze$oze_percent <- 100*(oze$OZE/oze$Zapotrzebowanie)
 oze_temp <- oze[order(oze$RokMiesiac),]
 oze_temp$id <- 1:nrow(oze_temp)
@@ -38,7 +37,8 @@ oze_temp$oze_percent <- round(oze_temp$oze_percent, digits = 2)
 my_list <- c(oze_temp$oze_percent)
 print(my_list)
 
-pdf("zad1.pdf", width = 10, height = 5)
+#PLOT 1----------------------
+pdf("zadanie_1_1.pdf", width = 10, height = 5, encoding='ISOLatin2.enc')
 plot(x=oze_temp$id, y=oze_temp$oze_percent, 
      type="b", col="red", 
      xlim=c(1,30), ylim=c(0,30),
@@ -56,16 +56,14 @@ text(15.5, 24, "Wzrost roczny: 4.342 %",col="red");
 abline(a=model$coefficients[1],b=model$coefficients[2],lty=8,lwd=1,col="blue")
 dev.off()
 
-#
-
-#PLOT 2
+#PLOT 2----------------------
 
 barplot1 <- as.matrix(oze[2:3])
 rownames(barplot1) <- oze$RokMiesiac
 barplot2 <- as.matrix(oze[6:7])
 rownames(barplot2) <- oze$RokMiesiac
 
-pdf("zad2.pdf", width = 20, height = 8)
+pdf("zadanie_1_2.pdf", width = 20, height = 8, encoding='ISOLatin2.enc')
 par(mfrow = c(2, 1))
 end_point = 0.5 + nrow(oze) + nrow(oze) - 1
 barplot(t(barplot1),
