@@ -1,0 +1,20 @@
+Napisac skrypt, ktorego wynikiem beda grafiki: zadanie_1_1.pdf, zadanie_1_2.pdf
+Odpowiednie grafiki powinny byc maksymalnie podobne - idealnie identyczne. 
+Skrypt powinien uruchamiac sie w katalogu nadrzednym dla data/, w ktorym znajduja sie dane:
+- PL_WYK_KSE.csv
+- PL_GEN_WIATR.csv
+
+Skrypt powinien uruchamiac sie w sposob nastepujacy:
+
+> source("zadanie_1.r")
+
+Za zadanie mozna zdobyc 4 punkty - po 2 pkt za kazda grafike. 
+Zadanie nalezy 2022.11.25 23:59:59. Zadanie pzreslane po terminie - NIE BEDZIE SPRAWDZANE!!!
+Zadanie nalezy przeslac na adres: mariusz.kozakiewicz@sgh.waw.pl
+Tresc tematu maila: PiWD/XXXXXX/zadanie_1.r, gdzie XXXXXX jest numerem albumu. 
+Zalaczniki powinny skladac sie tylko i wylacznie z jednego pliku o nazwie "zadanie_1.r". 
+(Nie przesylamy danych, w szczegolnosci katalogu data/).
+
+Uwaga:
+W rozwiazaniu zadania nie mozna korzystac z zadnej innej biblioteki graficznej poza graphics!!!
+
