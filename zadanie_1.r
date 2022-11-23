@@ -24,11 +24,10 @@ oze <- aggregate(cbind(Wiatr,PV)~RokMiesiac, data=oze, FUN=sum,na.rm=T)
 oze <- merge(oze, zapotrzebowanie, on = RokMiesiac, how="left")
 oze$OZE <- oze$Wiatr + oze$PV
 
+oze$oze_percent <- 100*(oze$OZE/oze$Zapotrzebowanie)
 oze$wiatr_percent= 100*(oze$Wiatr/oze$Zapotrzebowanie)
 oze$wiatr_pv= 100*(oze$PV/oze$Zapotrzebowanie)
 
-
-oze$oze_percent <- 100*(oze$OZE/oze$Zapotrzebowanie)
 oze_temp <- oze[order(oze$RokMiesiac),]
 oze_temp$id <- 1:nrow(oze_temp)
 model <- lm(oze_temp$oze_percent~id,data=oze_temp)
@@ -39,23 +38,34 @@ my_list <- c(oze_temp$oze_percent)
 pdf("zadanie_1_1.pdf", width = 12, height = 8, encoding='ISOLatin2.enc')
 
 plot(x=oze_temp$id, y=oze_temp$oze_percent, 
-     type="b", col="#FF2A2F", 
+     col="#FF2A2F", 
+     type="b", 
      xlim=c(1,30), ylim=c(0,30),
      axes = FALSE,
      xlab="[Miesiąc]", ylab="[%]",
-     pch=16)
+     pch=16
+     )
+
 axis(2)
+
 mtext(expression(paste(bold("Produkcja OZE do zapotrzebowania na moc w Polsce"))), 3, 2, cex = 1.5)
 mtext(expression(paste(bold("w miesiącach 2020.05 - 2022.10"))), 3, 0.5, cex = 1.5)
+
 mtext('Zrodlo danych: PSE Operator', side=4, cex=1, line =0, adj =0)
 mtext('https://www.pse.pl/dane-systemowe/funkcjonowanie-kse/raporty-dobowe-z-pracy-kse', 
       side=4, cex=1, line =1, adj =0)
 
-text(x=oze_temp$id, y=oze_temp$oze_percent+2,
-     labels=my_list, cex = 0.5)
+text(x=oze_temp$id, y=oze_temp$oze_percent+2, labels=my_list, cex = 0.5)
+
 text(15, 25.5, "Wzrost miesięczny: 0.362 %",col="#FF0000", cex =1.2)
 text(15, 23.5, "Wzrost roczny: 4.342 %",col="#FF0000", cex =1.2)
-abline(a=model$coefficients[1], b=model$coefficients[2], lty=8, lwd=1, col="blue")
+
+abline(a=model$coefficients[1], 
+       b=model$coefficients[2], 
+       lty=8, 
+       lwd=1, 
+       col="blue")
+
 abline(h = 0:30, v = 1:30, lty = "dotted", col = "#D3D3D3")
 dev.off()
 
@@ -63,6 +73,7 @@ dev.off()
 
 barplot1 <- as.matrix(oze[2:3])
 rownames(barplot1) <- oze$RokMiesiac
+
 barplot2 <- as.matrix(oze[6:7])
 rownames(barplot2) <- oze$RokMiesiac
 
