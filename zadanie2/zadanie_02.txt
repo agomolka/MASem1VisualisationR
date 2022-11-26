@@ -1,0 +1,13 @@
+2 pkt.
+Przygotowac skrypt demonstracyjny dwóch ciekawych bibliotek realizujacych wizualizacje z wykorzystaniem 
+komponentow ggplot2 innej niz prezentowana na zajeciach (katalog rozszerzenia/).
+Demonstracja musi wykorzytstywać dane dostępne w R bez konieczności wczytywania (np. cars, mtcars).
+
+Czas na rozwiazanie - do 2022.12.09 23:59:59.
+tytul maila: PiWD/XXXXX/zadanie_02.r, gdzie XXXXX - numer albumu
+Zadanie w formie skryptu zadanie_02.r (rozwiniecie tego skryptu)
+email: mkozak3@sgh.waw.pl lub mariusz.kozakiewicz@sgh.waw.pl
+
+--
+skrypt ma zrobic to samo co demonstracja
+NIE uzywajac tego co jest w foldrze rozszerzenia
