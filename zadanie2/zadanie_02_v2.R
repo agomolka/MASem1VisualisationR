@@ -8,7 +8,6 @@
 library(ggpattern)
 library(ggplot2)
 library(dplyr, warn.conflicts=FALSE)
-library(tidyr)
 
 sub_mtcars <- mtcars[,c("mpg","cyl","qsec", "drat", "wt")]
 d <- sub_mtcars %>% group_by(cyl) %>% summarize_all(mean) %>% gather(key, val, -cyl)
@@ -45,19 +44,15 @@ ggplot(d, aes(x = cyl, y = val, fill = key)) +
 
 library(ggtext)
 library(ggplot2)
-library(tidyverse)
-library(ggtext)
-library(glue)
-#install.packages("Cairo")
+#library(tidyverse)
+#library(glue)
 
-mtcars_1 <- mtcars %>% group_by(cyl) %>% tally()
+mtcars_1 <- aggregate(mtcars$cyl, by=list(mtcars$cyl), FUN=length)
+names(mtcars_1)[names(mtcars_1)=="Group.1"] <- "cyl"
+mtcars_1$colors <- c("green", "blue", "pink")
+mtcars_1$name <- paste0("<i style='color:",mtcars_1$colors,"'>",mtcars_1$cyl,"</i>")
 
-mtcars_1 %>% mutate(
-  colors = c("green", "blue", "pink"),
-  name = glue("<i style='color:{colors}'>{cyl}</i>"),
-  name = fct_reorder(name, n)
-)  %>%
-ggplot(aes(cyl, name, fill = colors)) + 
+ggplot(mtcars_1, aes(cyl, name, fill = colors)) + 
   geom_col(alpha = 0.5) + 
   scale_fill_identity() +
   labs(caption = "Aleksandra Gomolka") +
