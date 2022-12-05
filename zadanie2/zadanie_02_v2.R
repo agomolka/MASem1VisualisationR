@@ -51,6 +51,7 @@ ggplot(d, aes(x = Species, y = val, fill = key)) +
   theme(legend.position = 'none') +
   coord_fixed(ratio = 1/15) + 
   scale_pattern_discrete(guide = guide_legend(nrow = 1))
+#----------------------------------------------------------------
 #-----------------------
 #plot 2
 install.packages("cowplot")
@@ -82,4 +83,23 @@ plot_grid(
   label_fontfamily = "serif",
   label_fontface = "plain",
   label_colour = "blue"
+)
+#-------------
+#plot 3
+install.packages("afex")
+install.packages("ggwithinstats")
+install.packages("BayesFactor")
+set.seed(123)
+library(ggstatsplot)
+#library(WRS2) ## for data
+#library(afex) ## to run ANOVA
+library(BayesFactor)
+
+ggscatterstats(
+  data         = mtcars,
+  x            = cyl,
+  y            = mpg,
+  xlab  = "Number of cylinders",
+  ylab  = "Miles/(US) gallon [mpg]",
+  title = "Number of cylinders per fuel consumption indicator"
 )
