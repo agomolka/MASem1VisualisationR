@@ -1,5 +1,5 @@
 install.packages("gganimate")
-install.packages("ggbetweenstats")
+install.packages("ggpattern")
 data(mtcars)
 head(mtcars)
 View(mtcars)
@@ -50,7 +50,7 @@ if (require("PMCMRplus")) {
 }
 
 library(magick)
-
+library(ggpattern)
 if (require("magick")) {
   
   p <- ggplot(mpg, aes(class)) +
