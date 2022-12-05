@@ -103,3 +103,42 @@ ggscatterstats(
   ylab  = "Miles/(US) gallon [mpg]",
   title = "Number of cylinders per fuel consumption indicator"
 )
+
+#plot 1
+#-------------------
+
+library(ggtext)
+library(ggplot2)
+library(tidyverse)
+library(ggtext)
+library(glue)
+mtcars_1 <- mtcars %>% group_by(cyl) %>%tally()
+
+mtcars_1 %>% mutate(
+  colors = c("green", "yellow", "pink"),
+  name = glue("<i style='color:{colors}'>{cyl}</i>"),
+  name = fct_reorder(name, n)
+)  %>%
+ggplot(aes(cyl, name, fill = colors)) + 
+  geom_col(alpha = 0.5) + 
+  scale_fill_identity() +
+  labs(caption = "Aleksandra Gomolka") +
+  theme(
+    axis.text.y = element_markdown(),
+    plot.caption = element_markdown(lineheight = 1.2)
+  ) +
+  labs(
+    title = "<b>Count number of cylinders </b><br>
+    <span style = 'font-size:10pt'>within *mtcars* dataset",
+    x = "Number of cylinders",
+    y = "Count of cars with specific number of cylinders"
+  )+ 
+theme(
+  plot.title = element_textbox_simple(
+    size = 13,
+    lineheight = 1,
+    padding = margin(5.5, 5.5, 5.5, 5.5),
+    margin = margin(0, 0, 5.5, 0),
+    fill = "cornsilk"
+  )
+)
