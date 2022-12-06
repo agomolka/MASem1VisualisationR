@@ -1,78 +1,88 @@
-install.packages("gganimate")
-install.packages("ggpattern")
-data(mtcars)
-head(mtcars)
-View(mtcars)
+#-------------------------------------------------------------
+#Aleksandra Gomolka
+#123034
 
-#library(ggplot2)
-#install ggplot2
-install.packages("ggplot2")
-
-#load ggplot2
-library(ggplot2)
-#--------
-library(ggplot2)
-library(gganimate)
-library(ggbetweenstats) 
-data(iris)
-ggbetweenstats(
-  data  = iris,
-  x     = Species,
-  y     = Sepal.Length,
-  title = "Distribution of sepal length across Iris species"
-)
-#----------
-ggplot(df, aes(x=x, y=y)) +
-  geom_point()
-#-----------
-
-if (require("PMCMRplus")) {
-  # to get reproducible results from bootstrapping
-  set.seed(123)
-  library(ggstatsplot)
-  
-  # simple function call with the defaults
-  ggbetweenstats(mtcars, am, mpg)
-  
-  # more detailed function call
-  ggbetweenstats(
-    data = morley,
-    x = Expt,
-    y = Speed,
-    type = "robust",
-    xlab = "The experiment number",
-    ylab = "Speed-of-light measurement",
-    pairwise.comparisons = TRUE,
-    p.adjust.method = "fdr",
-    outlier.tagging = TRUE,
-    outlier.label = Run
-  )
-}
-
-library(magick)
+#-------------------------------------------------------------
+#plot 1
+#ggpattern
 library(ggpattern)
-if (require("magick")) {
-  
-  p <- ggplot(mpg, aes(class)) +
-    geom_bar_pattern(
-      aes(
-        pattern_angle = class
-      ), 
-      pattern         = 'placeholder',
-      pattern_type    = 'kitten',
-      fill            = 'white', 
-      colour          = 'black',
-      pattern_spacing = 0.025
-    ) +
-    theme_bw(18) +
-    labs(
-      title = "ggpattern::geom_bar_pattern()",
-      subtitle = "pattern = 'placeholder', pattern_type = 'kitten'"
-    ) + 
-    theme(legend.position = 'none') +
-    coord_fixed(ratio = 1/15) + 
-    scale_pattern_discrete(guide = guide_legend(nrow = 1))
-  
-  p
-  
-}
+library(ggplot2)
+library(dplyr, warn.conflicts=FALSE)
+library(tidyr)
+
+sub_mtcars <- mtcars[,c("mpg","cyl","qsec", "drat", "wt")]
+d <- sub_mtcars %>% group_by(cyl) %>% summarize_all(mean) %>% gather(key, val, -cyl)
+
+plot1 <-ggplot(d, aes(x = cyl, y = val, fill = key)) +
+  labs(title = "Number of cylinders per different variables", 
+       x = "Number of cylinders", 
+       y = "Mean  of varaibles") +
+  geom_col_pattern(position = "dodge",
+                   pattern = 
+                     c(
+                       "stripe", "stripe", "stripe", 
+                       "none", "none", "none", 
+                       "none", "none", "none", 
+                       "crosshatch", "crosshatch", "crosshatch" 
+                     ),
+                   pattern_density = .15,
+                   pattern_spacing = .05,
+                   pattern_key_scale_factor = 1.2,
+                   pattern_fill = 'black'
+                   ) +
+  guides(fill = guide_legend(override.aes = 
+                               list(
+                                 pattern = c("none", "stripe", "none", "crosshatch"),
+                                 pattern_spacing = .01,
+                                 pattern_angle = c(0, 35, 0, 45)
+                               ),
+                             title = "Variables:"
+  ))
+x11();print(plot1)
+#-------------------------------------------------------------
+#plot 2
+#ggtext
+
+library(ggtext)
+library(ggplot2)
+
+mtcars_1 <- aggregate(mtcars$cyl, by=list(mtcars$cyl), FUN=length)
+names(mtcars_1)[names(mtcars_1)=="Group.1"] <- "cyl"
+mtcars_1$colors <- c("green", "blue", "pink")
+mtcars_1$name <- paste0("<i style='color:",mtcars_1$colors,"'>",mtcars_1$cyl,"</i>")
+
+
+plot2 <- ggplot(mtcars_1, aes(cyl, name, fill = colors)) + 
+  geom_col(alpha = 0.5) + 
+  scale_fill_identity() +
+  labs(caption = "Aleksandra Gomolka") +
+  theme(
+    axis.text.y = element_markdown(),
+    plot.caption = element_markdown(lineheight = 1.2)
+  ) +
+  labs(
+    title = "<b>Count number of cylinders </b><br>
+    <span style = 'font-size:10pt'>within *mtcars* dataset",
+    x = "Number of cylinders",
+    y = "Count of cars with specific number of cylinders"
+  )+ 
+theme(
+  plot.title = element_textbox_simple(
+    size = 13,
+    lineheight = 1,
+    padding = margin(5.5, 5.5, 5.5, 5.5),
+    margin = margin(0, 0, 5.5, 0),
+    fill = "cornsilk"
+  )
+)
+x11(); print(plot2)
+
+#ten kod nie pokazuje wykresu w oddzielnym oknie na niektórych urządzeniach, wtedy należy:
+#zainstalować:
+#install.packages("Cairo")
+#Dopisać do ~/.Rprofile:
+#"
+#setHook(packageEvent("grDevices", "onLoad"),
+#        function(...) grDevices::X11.options(type='cairo'))
+#options(device='x11')
+#"

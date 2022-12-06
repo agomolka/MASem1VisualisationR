@@ -8,10 +8,13 @@
 library(ggpattern)
 library(ggplot2)
 library(dplyr, warn.conflicts=FALSE)
+library(tidyr)
 
 sub_mtcars <- mtcars[,c("mpg","cyl","qsec", "drat", "wt")]
 d <- sub_mtcars %>% group_by(cyl) %>% summarize_all(mean) %>% gather(key, val, -cyl)
-
+#---
+#mtcars_2 <- aggregate(cbind(mpg, qsec, drat, wt) ~ cyl, data = sub_mtcars, mean, na.rm = TRUE)
+x11()
 ggplot(d, aes(x = cyl, y = val, fill = key)) +
   labs(title = "Number of cylinders per different variables", 
        x = "Number of cylinders", 
@@ -44,15 +47,14 @@ ggplot(d, aes(x = cyl, y = val, fill = key)) +
 
 library(ggtext)
 library(ggplot2)
-#library(tidyverse)
-#library(glue)
 
 mtcars_1 <- aggregate(mtcars$cyl, by=list(mtcars$cyl), FUN=length)
 names(mtcars_1)[names(mtcars_1)=="Group.1"] <- "cyl"
 mtcars_1$colors <- c("green", "blue", "pink")
 mtcars_1$name <- paste0("<i style='color:",mtcars_1$colors,"'>",mtcars_1$cyl,"</i>")
 
-ggplot(mtcars_1, aes(cyl, name, fill = colors)) + 
+
+w <- ggplot(mtcars_1, aes(cyl, name, fill = colors)) + 
   geom_col(alpha = 0.5) + 
   scale_fill_identity() +
   labs(caption = "Aleksandra Gomolka") +
@@ -75,3 +77,4 @@ theme(
     fill = "cornsilk"
   )
 )
+x11(); print(w)
