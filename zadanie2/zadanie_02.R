@@ -53,7 +53,7 @@ mtcars_1$name <- paste0("<i style='color:",mtcars_1$colors,"'>",mtcars_1$cyl,"</
 
 
 plot2 <- ggplot(mtcars_1, aes(cyl, name, fill = colors)) + 
-  geom_col(alpha = 0.5) + 
+  geom_col(alpha = 0.5) + #uwaga! alpha - * patrz dół 
   scale_fill_identity() +
   labs(caption = "Aleksandra Gomolka") +
   theme(
@@ -77,12 +77,7 @@ theme(
 )
 x11(); print(plot2)
 
+*
 #ten kod nie pokazuje wykresu w oddzielnym oknie na niektórych urządzeniach, wtedy należy:
-#zainstalować:
-#install.packages("Cairo")
-#Dopisać do ~/.Rprofile:
-#"
-#setHook(packageEvent("grDevices", "onLoad"),
-#        function(...) grDevices::X11.options(type='cairo'))
-#options(device='x11')
-#"
+#usunąć parametr alpha = 0.5 z funckji geom_col(), ponieważ półprzezroczystość
+#nie jest obsługiwana na wszystkich urządzeniach
