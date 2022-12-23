@@ -1,0 +1,477 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Tytuł: zadanie\_03},
+  pdfauthor={Autor: Aleksandra Gomolka},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Tytuł: zadanie\_03}
+\author{Autor: Aleksandra Gomolka}
+\date{Data: 2022-12-23}
+
+\begin{document}
+\maketitle
+
+\hypertarget{rozdzial}{%
+\section{Rozdzial}\label{rozdzial}}
+
+Ala ma kota Wykres o generacji zrodel wiatrowych i fotowoltaicznych dla
+danych za ostatnie 7 dni
+
+\hypertarget{podrozdzial---jak-wstawic-coux15b-z-r}{%
+\subsection{\texorpdfstring{Podrozdzial - jak wstawic \emph{coś} z
+\textbf{R}}{Podrozdzial - jak wstawic coś z R}}\label{podrozdzial---jak-wstawic-coux15b-z-r}}
+
+\begin{figure}
+\centering
+\includegraphics{zadanie_03_files/figure-latex/unnamed-chunk-1-1.pdf}
+\caption{Podpis obrazka}
+\end{figure}
+
+\begin{verbatim}
+## `geom_smooth()` using method = 'loess' and formula = 'y ~ x'
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <c5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <ba>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <c5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <82>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <c5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <ba>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <c5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <82>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <c5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <ba>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <c5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <82>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <c5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <ba>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <c5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <82>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <c5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <ba>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <c5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <82>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <c5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <ba>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <c5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <82>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <c5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <ba>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <c5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <82>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <c5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <ba>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <c5>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'Generacja.źródeł.fotowoltaicznych' in 'mbcsToSbcs': dot
+## substituted for <82>
+\end{verbatim}
+
+\includegraphics{zadanie_03_files/figure-latex/unnamed-chunk-1-2.pdf} \#
+Rozdzial Tabela z danymi. Tabela powinna miec kolumny:
+Timestamp;Wiatr;PV; Tabelka ma zawierac sie w osobnym rozdziale raportu.
+
+\begin{longtable}[]{@{}rrl@{}}
+\caption{Oczekiwana tabela}\tabularnewline
+\toprule()
+Wiatr & PV & Timestamp \\
+\midrule()
+\endfirsthead
+\toprule()
+Wiatr & PV & Timestamp \\
+\midrule()
+\endhead
+424.500 & 0.000 & 2022-12-17 00:00:00 \\
+396.763 & 0.000 & 2022-12-17 01:00:00 \\
+344.288 & 0.000 & 2022-12-17 02:00:00 \\
+389.213 & 0.000 & 2022-12-17 03:00:00 \\
+390.850 & 0.000 & 2022-12-17 04:00:00 \\
+364.025 & 0.000 & 2022-12-17 05:00:00 \\
+346.988 & 0.000 & 2022-12-17 06:00:00 \\
+382.488 & 21.550 & 2022-12-17 07:00:00 \\
+379.288 & 85.688 & 2022-12-17 08:00:00 \\
+375.613 & 249.125 & 2022-12-17 09:00:00 \\
+373.938 & 413.238 & 2022-12-17 10:00:00 \\
+436.088 & 545.713 & 2022-12-17 11:00:00 \\
+457.325 & 510.588 & 2022-12-17 12:00:00 \\
+450.475 & 417.925 & 2022-12-17 13:00:00 \\
+453.375 & 259.800 & 2022-12-17 14:00:00 \\
+505.763 & 91.625 & 2022-12-17 15:00:00 \\
+599.813 & 0.000 & 2022-12-17 16:00:00 \\
+688.450 & 0.000 & 2022-12-17 17:00:00 \\
+750.613 & 0.000 & 2022-12-17 18:00:00 \\
+774.838 & 0.000 & 2022-12-17 19:00:00 \\
+811.838 & 0.000 & 2022-12-17 20:00:00 \\
+805.550 & 0.000 & 2022-12-17 21:00:00 \\
+840.313 & 0.000 & 2022-12-17 22:00:00 \\
+924.313 & 0.000 & 2022-12-17 23:00:00 \\
+934.275 & 0.000 & 2022-12-18 00:00:00 \\
+930.288 & 0.000 & 2022-12-18 01:00:00 \\
+860.700 & 0.000 & 2022-12-18 02:00:00 \\
+802.100 & 0.000 & 2022-12-18 03:00:00 \\
+785.188 & 0.000 & 2022-12-18 04:00:00 \\
+839.000 & 0.000 & 2022-12-18 05:00:00 \\
+821.725 & 0.000 & 2022-12-18 06:00:00 \\
+941.263 & 20.863 & 2022-12-18 07:00:00 \\
+1148.300 & 129.363 & 2022-12-18 08:00:00 \\
+1314.188 & 431.438 & 2022-12-18 09:00:00 \\
+1244.688 & 802.313 & 2022-12-18 10:00:00 \\
+1081.075 & 1104.050 & 2022-12-18 11:00:00 \\
+948.088 & 1129.238 & 2022-12-18 12:00:00 \\
+924.975 & 961.375 & 2022-12-18 13:00:00 \\
+998.063 & 549.088 & 2022-12-18 14:00:00 \\
+1220.975 & 167.225 & 2022-12-18 15:00:00 \\
+1406.988 & 0.000 & 2022-12-18 16:00:00 \\
+1579.550 & 0.000 & 2022-12-18 17:00:00 \\
+1736.838 & 0.000 & 2022-12-18 18:00:00 \\
+1786.350 & 0.000 & 2022-12-18 19:00:00 \\
+2008.263 & 0.000 & 2022-12-18 20:00:00 \\
+2157.913 & 0.000 & 2022-12-18 21:00:00 \\
+2327.050 & 0.000 & 2022-12-18 22:00:00 \\
+2616.213 & 0.000 & 2022-12-18 23:00:00 \\
+2831.913 & 0.000 & 2022-12-19 00:00:00 \\
+2970.238 & 0.000 & 2022-12-19 01:00:00 \\
+3232.750 & 0.000 & 2022-12-19 02:00:00 \\
+3504.863 & 0.000 & 2022-12-19 03:00:00 \\
+3723.375 & 0.000 & 2022-12-19 04:00:00 \\
+4010.450 & 0.000 & 2022-12-19 05:00:00 \\
+4315.950 & 0.000 & 2022-12-19 06:00:00 \\
+4673.613 & 19.450 & 2022-12-19 07:00:00 \\
+4821.700 & 281.800 & 2022-12-19 08:00:00 \\
+4826.425 & 823.550 & 2022-12-19 09:00:00 \\
+4902.938 & 1392.313 & 2022-12-19 10:00:00 \\
+4894.625 & 1666.075 & 2022-12-19 11:00:00 \\
+4926.075 & 1499.800 & 2022-12-19 12:00:00 \\
+5059.088 & 1064.050 & 2022-12-19 13:00:00 \\
+5409.075 & 547.438 & 2022-12-19 14:00:00 \\
+5563.088 & 157.450 & 2022-12-19 15:00:00 \\
+5502.238 & 0.000 & 2022-12-19 16:00:00 \\
+5384.475 & 0.000 & 2022-12-19 17:00:00 \\
+5246.163 & 0.000 & 2022-12-19 18:00:00 \\
+5198.750 & 0.000 & 2022-12-19 19:00:00 \\
+5282.113 & 0.000 & 2022-12-19 20:00:00 \\
+5283.188 & 0.000 & 2022-12-19 21:00:00 \\
+5310.500 & 0.000 & 2022-12-19 22:00:00 \\
+5249.063 & 0.000 & 2022-12-19 23:00:00 \\
+5257.113 & 0.000 & 2022-12-20 00:00:00 \\
+5257.000 & 0.000 & 2022-12-20 01:00:00 \\
+5247.488 & 0.000 & 2022-12-20 02:00:00 \\
+5119.350 & 0.000 & 2022-12-20 03:00:00 \\
+5028.475 & 0.000 & 2022-12-20 04:00:00 \\
+5077.925 & 0.000 & 2022-12-20 05:00:00 \\
+5048.950 & 0.000 & 2022-12-20 06:00:00 \\
+5035.825 & 17.763 & 2022-12-20 07:00:00 \\
+4996.263 & 147.238 & 2022-12-20 08:00:00 \\
+4779.088 & 450.138 & 2022-12-20 09:00:00 \\
+4665.625 & 704.013 & 2022-12-20 10:00:00 \\
+4515.013 & 804.125 & 2022-12-20 11:00:00 \\
+4464.975 & 827.288 & 2022-12-20 12:00:00 \\
+4214.663 & 673.788 & 2022-12-20 13:00:00 \\
+4260.225 & 394.650 & 2022-12-20 14:00:00 \\
+4573.000 & 99.300 & 2022-12-20 15:00:00 \\
+4763.588 & 0.000 & 2022-12-20 16:00:00 \\
+4802.975 & 0.000 & 2022-12-20 17:00:00 \\
+4812.063 & 0.000 & 2022-12-20 18:00:00 \\
+4902.100 & 0.000 & 2022-12-20 19:00:00 \\
+4901.388 & 0.000 & 2022-12-20 20:00:00 \\
+4786.738 & 0.000 & 2022-12-20 21:00:00 \\
+4590.838 & 0.000 & 2022-12-20 22:00:00 \\
+4528.325 & 0.000 & 2022-12-20 23:00:00 \\
+4442.275 & 0.000 & 2022-12-21 00:00:00 \\
+4409.913 & 0.000 & 2022-12-21 01:00:00 \\
+4301.938 & 0.000 & 2022-12-21 02:00:00 \\
+4222.550 & 0.000 & 2022-12-21 03:00:00 \\
+4144.613 & 0.000 & 2022-12-21 04:00:00 \\
+3954.025 & 0.000 & 2022-12-21 05:00:00 \\
+3909.788 & 0.000 & 2022-12-21 06:00:00 \\
+3667.850 & 15.375 & 2022-12-21 07:00:00 \\
+3612.938 & 131.463 & 2022-12-21 08:00:00 \\
+3389.788 & 411.488 & 2022-12-21 09:00:00 \\
+3103.200 & 637.363 & 2022-12-21 10:00:00 \\
+2804.950 & 657.800 & 2022-12-21 11:00:00 \\
+2688.875 & 617.475 & 2022-12-21 12:00:00 \\
+2563.488 & 415.438 & 2022-12-21 13:00:00 \\
+2350.263 & 208.575 & 2022-12-21 14:00:00 \\
+2278.875 & 67.575 & 2022-12-21 15:00:00 \\
+2430.875 & 0.000 & 2022-12-21 16:00:00 \\
+2563.188 & 0.000 & 2022-12-21 17:00:00 \\
+2601.688 & 0.000 & 2022-12-21 18:00:00 \\
+2697.225 & 0.000 & 2022-12-21 19:00:00 \\
+2808.638 & 0.000 & 2022-12-21 20:00:00 \\
+2857.225 & 0.000 & 2022-12-21 21:00:00 \\
+2770.500 & 0.000 & 2022-12-21 22:00:00 \\
+2921.088 & 0.000 & 2022-12-21 23:00:00 \\
+2919.113 & 0.000 & 2022-12-22 00:00:00 \\
+2882.025 & 0.000 & 2022-12-22 01:00:00 \\
+2902.425 & 0.000 & 2022-12-22 02:00:00 \\
+2895.125 & 0.000 & 2022-12-22 03:00:00 \\
+2843.625 & 0.000 & 2022-12-22 04:00:00 \\
+2800.113 & 0.000 & 2022-12-22 05:00:00 \\
+2872.100 & 0.000 & 2022-12-22 06:00:00 \\
+2886.288 & 10.725 & 2022-12-22 07:00:00 \\
+2965.200 & 135.525 & 2022-12-22 08:00:00 \\
+2910.800 & 542.125 & 2022-12-22 09:00:00 \\
+2814.450 & 915.725 & 2022-12-22 10:00:00 \\
+2676.275 & 1168.825 & 2022-12-22 11:00:00 \\
+2420.913 & 1088.988 & 2022-12-22 12:00:00 \\
+2568.900 & 721.038 & 2022-12-22 13:00:00 \\
+2883.550 & 350.763 & 2022-12-22 14:00:00 \\
+3107.188 & 102.413 & 2022-12-22 15:00:00 \\
+3305.263 & 0.000 & 2022-12-22 16:00:00 \\
+3381.700 & 0.000 & 2022-12-22 17:00:00 \\
+3675.763 & 0.000 & 2022-12-22 18:00:00 \\
+3812.513 & 0.000 & 2022-12-22 19:00:00 \\
+3819.888 & 0.000 & 2022-12-22 20:00:00 \\
+3684.813 & 0.000 & 2022-12-22 21:00:00 \\
+3551.250 & 0.000 & 2022-12-22 22:00:00 \\
+3522.850 & 0.000 & 2022-12-22 23:00:00 \\
+3306.850 & 0.000 & 2022-12-23 00:00:00 \\
+3147.938 & 0.000 & 2022-12-23 01:00:00 \\
+2754.025 & 0.000 & 2022-12-23 02:00:00 \\
+2644.963 & 0.000 & 2022-12-23 03:00:00 \\
+2493.288 & 0.000 & 2022-12-23 04:00:00 \\
+2354.738 & 0.000 & 2022-12-23 05:00:00 \\
+2432.188 & 0.000 & 2022-12-23 06:00:00 \\
+2522.575 & 12.775 & 2022-12-23 07:00:00 \\
+2420.163 & 128.600 & 2022-12-23 08:00:00 \\
+2278.700 & 353.413 & 2022-12-23 09:00:00 \\
+2187.575 & 705.638 & 2022-12-23 10:00:00 \\
+2212.088 & 826.675 & 2022-12-23 11:00:00 \\
+2181.975 & 760.150 & 2022-12-23 12:00:00 \\
+2066.113 & 527.663 & 2022-12-23 13:00:00 \\
+2141.763 & 264.725 & 2022-12-23 14:00:00 \\
+1940.813 & 74.763 & 2022-12-23 15:00:00 \\
+1689.100 & 0.000 & 2022-12-23 16:00:00 \\
+1466.275 & 0.000 & 2022-12-23 17:00:00 \\
+1304.763 & 0.000 & 2022-12-23 18:00:00 \\
+1175.663 & 0.000 & 2022-12-23 19:00:00 \\
+946.525 & 0.000 & 2022-12-23 20:00:00 \\
+\bottomrule()
+\end{longtable}
+
+\end{document}

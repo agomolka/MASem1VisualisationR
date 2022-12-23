@@ -1,33 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>EKSPORT DANYCH ZA OKRES / DATA EXPORT FOR THE PERIOD</title>
-<link href="/error/tls.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body class="oneColFixCtrHdr">
-<br>
-<div id="container">
-
-  <div id="header">
-    <h1><img src="/error/logo.gif" width="92" height="37" /></h1>
-  </div>
-  <div id="mainContent">
-    <h1>EKSPORT DANYCH ZA OKRES</h1>
-<p>Przekroczono limit 31 dni dla eksportu za okres.</p>
-<p>Wszelkiej pomocy udzieli  PaÅ„stwu nasze Centrum Informacyjno ZgÅ‚oszeniowe, tel.: +48 22 242 18 18, email: <a href="mailto:ciz@pse.pl">ciz@pse.pl</a></p>
-<p>&nbsp;</p>
-<hr size="1" noshade="noshade" />
-<h1><br />
-  DATA EXPORT FOR THE PERIOD</h1>
-<p>31 days limit has been exceeded.</p>
-<p>If you need help, please contact our IT Information and Registration Center, tel.: +48 22 242 18 18, email: <a href="mailto:ciz@pse.pl">ciz@pse.pl</a></p>
-  </div>
-  <div id="footer">
-    <p>&nbsp;</p>
-</div>
-</div>
-</body>
-</html>
-
+Data;Godzina;Generacja Ÿróde³ wiatrowych;Generacja Ÿróde³ fotowoltaicznych
+2022-12-20;1;5257,113;0,000
+2022-12-20;2;5257,000;0,000
+2022-12-20;3;5247,488;0,000
+2022-12-20;4;5119,350;0,000
+2022-12-20;5;5028,475;0,000
+2022-12-20;6;5077,925;0,000
+2022-12-20;7;5048,950;0,000
+2022-12-20;8;5035,825;17,763
+2022-12-20;9;4996,263;147,238
+2022-12-20;10;4779,088;450,138
+2022-12-20;11;4665,625;704,013
+2022-12-20;12;4515,013;804,125
+2022-12-20;13;4464,975;827,288
+2022-12-20;14;4214,663;673,788
+2022-12-20;15;4260,225;394,650
+2022-12-20;16;4573,000;99,300
+2022-12-20;17;4763,588;0,000
+2022-12-20;18;4802,975;0,000
+2022-12-20;19;4812,063;0,000
+2022-12-20;20;4902,100;0,000
+2022-12-20;21;4901,388;0,000
+2022-12-20;22;4786,738;0,000
+2022-12-20;23;4590,838;0,000
+2022-12-20;24;4528,325;0,000
