@@ -1,0 +1,10 @@
+Zadanie za 1 pkt. 
+Napisać skrypt generujący prezentację pptx. 
+Na kolejnych slajdach prezentacji mają pojawiać się wizualizacje kursów GBP, USD, EUR 
+- jako szeregi czasowe. 
+Slajdy w tytule mają mieć nazwę waluty. 
+Zadanie do zrobienia na zajęciach. 
+
+
+
+
