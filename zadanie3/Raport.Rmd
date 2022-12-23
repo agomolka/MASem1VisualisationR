@@ -1,0 +1,159 @@
+---
+title: "rmarkdown demo"
+author: "SGH"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: TRUE
+  word_document: default
+  pdf_document: default
+---
+
+<!--
+    ? html_document
+
+    Manual
+    https://rmarkdown.rstudio.com/lesson-1.html
+-->
+
+<!--
+    A to jest komentarz - czyli cos, czego markdown nie widzi!!!
+-->
+
+
+# To jest jest tytul rozdzialu pierwszego  
+
+Nauczymy sie kilku rzeczy:
+
++ wstawiania dynamicznie rzeczy z R
+    + wstawiania obrazkow
+    + wstawiania tabelek 
+        + na dwa sposoby 
+    + bb 
++ wstawiania rzeczy R w postaci blokow 
+
+1. wstawiania dynamicznie rzeczy z R
+    1. wstawiania obrazkow
+        + cc
+        + TY
+            + cc1
+            + eer
+    1. Ala ma kota
+1. iii
+    1. s
+        + ee
+        + ee1
+        + rr
+1. Tak
+    1. to 
+    1. jest 
+    1. raprt 
+
+
+
+# Rozdzial 
+Ala ma kota 
+
+
+## Podrozdzial - jak wstawic *coś* z **R**
+
+### Wstawka inline 
+Obecnie jest `r Sys.time()`, a liczba $\pi$, to w przyblizeniu `r pi`. 
+Nizej alternatywa w postaci blokow, na cztery sposoby.
+
+### Wstawka w postaci bloku 
+Kluczowe sa dwa parametry *Echo* i *results*: 
+
+#### Echo = T i results = hide,
+
+```{r, echo=T, results="hide"}
+  x <- rnorm(5)  
+  print(x)
+```  
+
+
+#### Echo = F i results = hide,
+
+```{r, echo=F, results="hide"}
+  x <- rnorm(5)  
+  print(x)
+```  
+
+
+#### Echo = F i results = asis,
+
+```{r, echo=F, results="asis"}
+  x <- rnorm(5)  
+  print(x)
+```  
+
+#### Echo = T i results = asis,
+
+```{r, echo=T, results="asis"}
+  x <- rnorm(5)  
+  print(x)
+```  
+
+Zmienna *x* wynosi `r x`,
+
+# Grafika 
+Chwila o grafice. 
+
+## Graphics 
+A teraz wstawimy obrazek
+
+```{r, echo=F, results="asis" , fig.height=5, fig.width=10, fig.cap="Podpis obrazka"}
+
+  plot(x=cars$speed,y=cars$dist,xlab="",ylab="",main="cars")
+  lines(x=cars$speed,y=cars$dist,col="red")
+  
+
+```
+## ggplot2 
+
+Drugi obrazek 
+
+```{r, echo=F, results="asis", fig.height=5, fig.width=10, fig.cap="Podpis"}
+
+    library(ggplot2)
+    img <- ( 
+        ggplot(cars,aes(x=speed,y=dist)) 
+        + 
+        geom_line() 
+        + 
+        geom_point() 
+        + 
+        geom_smooth()
+        )
+    print(img)
+
+```
+
+## Tabela
+
+|A|B|
+|-|-|
+|1|2|
+
+
+lub tak:
+
+```{r,echo=F,results="asis"}
+    library(knitr)
+
+    kable( head(mtcars), caption="Podpis tabeli")
+
+```
+
+
+
+# Formula matematyczna 
+
+A teraz wyażenia matematyczne:
+$(-1)^{\pi} + \sqrt{2 + x} + \int_0^1{e^{-x^2} dx} + \frac{1}{2}$
+
+
+
+
+
+

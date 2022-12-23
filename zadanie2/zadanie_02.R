@@ -16,7 +16,7 @@ d <- sub_mtcars %>% group_by(cyl) %>% summarize_all(mean) %>% gather(key, val, -
 plot1 <-ggplot(d, aes(x = cyl, y = val, fill = key)) +
   labs(title = "Number of cylinders per different variables", 
        x = "Number of cylinders", 
-       y = "Mean  of varaibles") +
+       y = "Mean values of variables") +
   geom_col_pattern(position = "dodge",
                    pattern = 
                      c(
