@@ -7,7 +7,7 @@ output:
   pdf_document: default
 ---
 
-# Rozdzial 
+# Wykres 
 Wykres o generacji zrodel wiatrowych i fotowoltaicznych dla danych za ostatnie 7 dni
 
 
@@ -48,20 +48,20 @@ Wykres o generacji zrodel wiatrowych i fotowoltaicznych dla danych za ostatnie 7
         xlab("Czas") 
       +
         scale_y_continuous("Generacja.źródeł.fotowoltaicznych",
-                           sec.axis=sec_axis(~ . * 1.20,name="Generacja.źródeł.wiatrowych"))
+                           sec.axis = sec_axis(~ . * 30.48,name="Generacja.źródeł.wiatrowych"))
       # #~ . * 1.20; ~.*30.48
       +
         geom_line() 
       + 
         geom_point() 
-      + 
-        geom_smooth()
+      #+ 
+       # geom_smooth()
     )
     print(img)
     
 
 ```
-# Rozdzial 
+# Tabela 
 Tabela z danymi. Tabela powinna miec kolumny: Timestamp;Wiatr;PV; Tabelka ma zawierac sie w osobnym rozdziale raportu.
 
 ```{r,echo=F,results="asis"}
