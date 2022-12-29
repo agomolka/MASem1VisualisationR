@@ -3,7 +3,9 @@ title: 'Tytuł: zadanie_03'
 author: 'Autor: Aleksandra Gomolka'
 date: 'Data: `r Sys.Date()`'
 output:
-  html_document: default
+  html_document:
+    toc: TRUE
+  word_document: default
   pdf_document: default
 ---
 
@@ -49,13 +51,10 @@ Wykres o generacji zrodel wiatrowych i fotowoltaicznych dla danych za ostatnie 7
       +
         scale_y_continuous("Generacja.źródeł.fotowoltaicznych",
                            sec.axis = sec_axis(~ . * 30.48,name="Generacja.źródeł.wiatrowych"))
-      # #~ . * 1.20; ~.*30.48
       +
         geom_line() 
       + 
         geom_point() 
-      #+ 
-       # geom_smooth()
     )
     print(img)
     
