@@ -1,7 +1,7 @@
 ---
 title: 'Tytuł: zadanie_03'
 author: 'Autor: Aleksandra Gomolka'
-date: 'Data: `r Sys.Date()`'
+date: "Data: `r Sys.Date()`"
 output:
   html_document:
     toc: TRUE
@@ -14,7 +14,7 @@ Wykres o generacji zrodel wiatrowych i fotowoltaicznych dla danych za ostatnie 7
 
 
 
-```{r, echo=F, results="asis", fig.height=5, fig.width=10, fig.cap="Wykres dla zadania 3"}
+```{r, echo=F, results="asis", fig.height=5, fig.width=10, fig.cap="Wykres dla zadania 3 z użyciem  ggplot"}
 
     library(ggplot2)
     library(reshape2)
@@ -30,6 +30,7 @@ Wykres o generacji zrodel wiatrowych i fotowoltaicznych dla danych za ostatnie 7
                     destfile=paste(date[1],".csv",sep=""), method="curl")
       
       d_temp <- read.table(file=paste(date[1], ".csv", sep=""), sep=";",dec=",",header=T,fileEncoding="CP1250")
+      
       d <- rbind(d, setNames(d_temp, names(d_temp)))
     }
     
